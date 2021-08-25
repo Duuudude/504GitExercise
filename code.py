@@ -1,16 +1,16 @@
-def function1(a):
-    b = dict()
-    for c in a:
-        if c not in b:
-            b[c] = 1
+def count(sequence):
+    base_count = dict()
+    for base in sequence:
+        if base not in base_count:
+            base_count[base] = 1
         else:
-            b[c] += 1
-    return b
+            base_count[base] += 1
+    return base_count
 
-def function2(a):
-    print('freqs')
-    total = float(sum([a[b] for b in a.keys()]))
-    for b in a.keys():
-        print(b + ':' + str(a[b]/total))
+def cal_freq(base_count):
+    print('ACTG Frequency')
+    total = float(sum([base_count[base] for base in base_count.keys()]))
+    for base in base_count.keys():
+        print(base + ':' + str(base_count[base]/total))
 
-function2(function1('ATCTGACGCGCGCCGC'))
+cal_freq(count('ATCTGACGCGCGCCGC'))
